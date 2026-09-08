@@ -27,11 +27,24 @@ Per quanto riguarda le differenze tra portale e CLI, ho notato che il portale è
 ## Cleanup
 
 - operazione di eliminazione:
+```bash
+az group delete \
+  --name "$LAB_RG" \
+  --yes \
+  --no-wait
+```
 - controllo utilizzato:
+```bash
+az group exists --name "$LAB_RG"
+```
 - risultato finale:
+false
 - eventuale anomalia e soluzione:
 
 ## Rilevanza professionale
 
 Spiega come inventario, tag e verifica del cleanup rendono una procedura ripetibile e controllabile.
 
+L'integrazione di inventario, tag e verifica del cleanup rende una procedura ripetibile e controllabile inserendola nella sequenza operativa 
+`inventario → creazione → verifica → evidenza → eliminazione → verifica dell'eliminazione`, garantendo piena visibilità e l'assenza di residui tra un'esecuzione e l'altra. 
+I tag facilitano l'inventario e la governance, permettendo di identificare ogni risorsa associata al resource group. La successiva verifica del cleanup certifica che Azure abbia effettivamente rimosso il resource group e tutti i componenti correlati anziché limitarsi all'invio del comando di cancellazione, impedendo che risorse orfane continuino a generare costi o a causare conflitti e garantendo il ripristino di uno stato di partenza certo per qualsiasi deployment successivo.

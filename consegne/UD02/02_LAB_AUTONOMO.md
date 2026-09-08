@@ -137,6 +137,7 @@ Che ritorna:
   }
 }
 ```
+Utilizzando i comandi di prima, ho controllato che sia il portale sia il CLI restituiscono le stesse risorse.
 
 
 ## Diagnosi
@@ -151,5 +152,5 @@ Che ritorna:
 
 - risorse eliminate:
 - controllo finale:
-- hash abbreviato e messaggio del commit:
+- hash abbreviato e messaggio del commit: 
 
