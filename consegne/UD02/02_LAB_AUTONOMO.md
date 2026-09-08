@@ -151,6 +151,22 @@ Utilizzando i comandi di prima, ho controllato che sia il portale sia il CLI res
 ## Cleanup e consegna
 
 - risorse eliminate:
+    Resource Group, Virtual Network, Storage Account
 - controllo finale:
+    `az group exists --name "$AUTO_RG"` ritorna false
+    Il comando per elencare le risorse collegate al Resource group:
+```bash
+az resource list \
+  --resource-group "$AUTO_RG" \
+  --query "[].id" \
+  --output tsv \
+  | sed -E 's#/subscriptions/[^/]+#/subscriptions/<omitted>#'
+```
+Ritorna:
+```bash
+ERROR: (ResourceGroupNotFound) Resource group 'rg-cea-ud02-auto-3a5a3394' could not be found.
+Code: ResourceGroupNotFound
+Message: Resource group 'rg-cea-ud02-auto-3a5a3394' could not be found.
+```
 - hash abbreviato e messaggio del commit: 
 
