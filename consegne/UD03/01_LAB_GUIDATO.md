@@ -10,10 +10,15 @@
 
 | Principal anonimizzato | Ruolo | Scope | Diretta/ereditata | Motivo |
 |---|---|---|---|---|
+| User | Owner | /subscriptions/<omitted> | Ereditata | Il ruolo Owner è stato assegnato al livello superiore della Subscription |
 | Group | Reader | /subscriptions/<omitted>/resourceGroups/rg-cea-identity-d2109c | Diretta | Reader è sufficiente per consultare lo scope e non permette di modificarne le risorse |
-| User | Reader | /subscriptions/<omitted>/resourceGroups/rg-cea-identity-d2109c | Ereditata | L'utente cea-lab-d2109c fa parte del gruppo. |
+| User | Reader | /subscriptions/<omitted>/resourceGroups/rg-cea-identity-d2109c | Ereditata | L'utente cea-lab-d2109c fa parte del gruppo |
 
 Descrivi gli oggetti letti o creati, l'autorizzazione necessaria e l'accesso effettivo osservato.
+
+L'User Owner è l'identità dell'amministratore. L'assegnazione è di tipo ereditato.
+Il Group Reader è il principal registrato del Security Group di Entra ID. L'assegnazione è di tipo diretto.
+Le utenze che fanno parte del gruppo non vengono visualizzate con il comando `az role assignment list`.
 
 Ho creato il resource group tramite `az group create`
 Ho creato l'User cea-lab-d2109c e l'ho aggiunto al gruppo grp-cea-readers-d2109c
