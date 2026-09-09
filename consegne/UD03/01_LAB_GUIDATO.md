@@ -10,8 +10,8 @@
 
 | Principal anonimizzato | Ruolo | Scope | Diretta/ereditata | Motivo |
 |---|---|---|---|---|
-| User | Owner | /subscriptions/<omitted> | | |
-| Group | Reader | /subscriptions/<omitted>/resourceGroups/rg-cea-identity-d2109c | | |
+| Group | Reader | /subscriptions/<omitted>/resourceGroups/rg-cea-identity-d2109c | Diretta | Reader è sufficiente per consultare lo scope e non permette di modificarne le risorse |
+| User | Reader | /subscriptions/<omitted>/resourceGroups/rg-cea-identity-d2109c | Ereditata | L'utente cea-lab-d2109c fa parte del gruppo. |
 
 Descrivi gli oggetti letti o creati, l'autorizzazione necessaria e l'accesso effettivo osservato.
 
