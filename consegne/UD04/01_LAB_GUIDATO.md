@@ -66,7 +66,6 @@ Attesa con `az group wait --name "$LAB_RG" --deleted`
 Verifica con `az group exists --name "$LAB_RG"`
 Che risponde con `false` 
 
-
 ## Rilevanza professionale
 
 Motiva una scelta tra Blob e Files e il relativo metodo di autorizzazione.
