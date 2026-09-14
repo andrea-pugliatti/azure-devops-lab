@@ -159,5 +159,10 @@ X-Powered-By: Express
 
 ## Cleanup
 
-- Resource Group eliminato:
-- `az group exists`:
+- Resource Group eliminato: Tramite:
+```sh
+az group delete \
+  --name "$LAB_RG" \
+  --yes
+```
+- `az group exists`: false
