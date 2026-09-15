@@ -147,7 +147,7 @@ Time                          Operation                      Status
 
 ## Cleanup
 
-- diagnostic setting rimossa:
-- RG CLI test eliminato:
-- RG PowerShell test eliminato:
-- RG principale eliminato:
+- diagnostic setting rimossa: Sì `az group exists --name rg-ud07-auto` ritorna false
+- RG CLI test eliminato: Sì `az group exists --name rg-ud07-cli-test` ritorna false
+- RG PowerShell test eliminato: Sì `az group exists --name rg-ud07-ps-test` ritorna false
+- RG principale eliminato: Sì `az group exists --name rg-ud07-auto` ritorna false
