@@ -2,82 +2,82 @@
 
 ## Organization
 
-- nome:
-- geography:
-- Azure subscription collegata: sì/no
+- nome: azdo-andreapugliatti-01
+- geography: West Europe
+- Azure subscription collegata: sì
 
 ## Project
 
-- nome:
-- visibility:
-- version control:
-- process:
+- nome: az900-az104-devops
+- visibility: Private
+- version control: Git
+- process: Agile
 
 ## Gruppi
 
 | Gruppo | Funzione essenziale |
 |---|---|
-| Project Administrators | |
-| Contributors | |
-| Readers | |
-| Build Administrators | |
+| Project Administrators | Hanno il controllo totale a livello di singolo progetto |
+| Contributors | È il gruppo operativo principale pensato per sviluppatori e membri del team |
+| Readers | Hanno accesso in sola lettura all'intero progetto |
+| Build Administrators | Hanno permessi completi di amministrazione specifici per l'area CI/CD (Azure Pipelines) |
 
 ## GitHub
 
-- repository:
-- repository privato: sì/no
-- `gh auth status`:
-- `git fetch`:
+- repository: andrea-pugliatti/azure-devops-lab
+- repository privato: no
+- `gh auth status`: Logged in to github.com account andrea-pugliatti
+- `git fetch`: Effettuato
 - connessione OAuth/PAT creata in UD09: NO
 - metodo raccomandato per CI futura: Azure Pipelines GitHub App
 
 ## Parallel jobs
 
-- Microsoft-hosted:
-- esito hosted:
-- self-hosted:
-- billing verificato:
+- Microsoft-hosted: MICROSOFT_HOSTED_READY
+- esito hosted: Disponibile Free tier 1 parallel job
+- self-hosted: Disponibile 1 parallel job
+- billing verificato: sì
 
 ## Agent Pool
 
-- creato da Project settings: sì/no
-- nome:
-- tipo:
-- accesso automatico a tutte le pipeline:
+- creato da Project settings: sì
+- nome: pool-ud09-wsl
+- tipo: Self-hosted
+- accesso automatico a tutte le pipeline: sì
 
 ## Autenticazione registrazione agent
 
 - metodo usato: PAT / Device Code Flow
-- PAT name, se usato:
+- PAT name, se usato: ud09-agent-registration
 - PAT scope, se usato:
-- expiration:
+- expiration: 30 giorni
 - inserito in file/repository: NO
 - PAT revocato, se usato:
 
 ## Agent
 
-- nome:
-- pool:
-- OS:
-- version:
-- status:
-- modalità:
-- credenziale di registrazione chiusa e agent ancora Online: sì/no
+- nome: wsl-ud09-andreapugliatti
+- pool: pool-ud09-wsl
+- OS: Darwin (macOS)
+- version: 5.279.0
+- status: Idle
+- modalità: self-hosted
+- credenziale di registrazione chiusa e agent ancora Online: no
 
 ## Capability
 
-- Agent.OS:
-- Agent.Version:
-- git:
-- python:
-- PATH verificato:
+- Agent.OS: Darwin
+- Agent.Version: 5.279.0
+- git: /usr/bin/git
+- python: `/Users/<omitted>/bin/python3`
+- PATH verificato: sì
 
 ## Readiness
 
-- Organization:
-- Project:
-- GitHub:
-- hosted:
-- self-hosted:
-- agent:
-- security:
+- Organization: azdo-andreapugliatti-01
+- Project: az900-az104-devops
+- GitHub: andrea-pugliatti/azure-devops-lab
+- hosted: no
+- self-hosted: pool-ud09-wsl
+- agent: wsl-ud09-andreapugliatti
+- security: Check effettuato
