@@ -54,7 +54,10 @@ In UD11 i comandi vengono lanciati direttamente da terminale e l'Agent non è ne
 
 ## 14. Distingui system-assigned e user-assigned managed identity.
 **Risposta:**
-Managed Identity consente ad un'applicazione di autenticarsi in modo sicuro verso altri servizi Azure. System-assigned significa che l'identità è creata direttamente per la Container App e il suo lifecycle è legato alla risorsa e viene eliminata con essa. User-assigned significa che l'identità è creata come risorsa Azure indipendente, con un ciclo di vita autonomo, e riutilizzabile su più risorse.
+Una Managed Identity è un’entità di sicurezza registrata in Microsoft Entra ID, un Service Principal, associata a una risorsa Azure e consente ad un'applicazione di autenticarsi in modo sicuro verso altri servizi Azure. Le credenziali crittografiche necessarie per autenticare la risorsa sono generate, custodite e ruotate automaticamente dall’infrastruttura di Azure.
+System-assigned significa che l'identità è creata direttamente per la Container App e il suo lifecycle è legato alla risorsa e viene eliminata con essa. User-assigned significa che l'identità è creata come risorsa Azure indipendente, con un ciclo di vita autonomo, e riutilizzabile su più risorse.
+
+Il meccanismo di funzionamento si basa su token. Prima di tutto, l'amministratore assegna all'identità gestita i permessi necessari sulla risorsa di destinazione. Quando il codice dell'applicazione ha bisogno di comunicare con il servizio di destinazione, non passa alcuna chiave segreta, ma effettua una chiamata a un endpoint locale interno di Azure, l'Instance Metadata Service. Poiché la richiesta proviene dall'interno della risorsa autenticata, Azure attesta l'identità dell'ambiente e richiede a Microsoft Entra ID un token di accesso valido. Microsoft Entra ID genera il token e lo restituisce all'applicazione. L'applicazione riceve il token e lo allega alla richiesta HTTP destinata al servizio target, che verifica la validità del token e concede l'accesso.
 
 ## 15. Che cosa significa scale-to-zero?
 **Risposta:**
