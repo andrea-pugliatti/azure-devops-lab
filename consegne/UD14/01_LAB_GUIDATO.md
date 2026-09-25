@@ -16,7 +16,7 @@ OK
 }
 ```
 - sc-acr-ud14: Creata
-- WIF:
+- WIF: sì
 - YAML:
 trigger: 
 ```yaml
@@ -105,5 +105,8 @@ Agent.MachineName=runnervm1fde3
 Docker version 28.0.4, build b8034c0
 ```
 - run CI:
-- Build ID:
-- tag ACR:
+UD14_AGENT_MODE=MICROSOFT_HOSTED
+Lo step che ha eseguito i test è `Run Python tests`.
+Lo step che ha costruito l'immagine è `Build and push to ACR`/`Docker@2`.
+- Build ID: bb2ec949704eebdd8043d13da235e185d9bd9d764ff7693d89ec1e4a87273881
+- tag ACR: 8
