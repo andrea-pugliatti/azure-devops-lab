@@ -23,6 +23,7 @@ OK
 https://github.com/andrea-pugliatti/azure-devops-lab/pull/5
 - merge: fc10275
 - run CI:
-UD14_FINAL_IMAGE_TAG=23537d91f1f5385ea3cfe294a038185c19a5ea08ac5df8e29a1a1958067b8598
+Image ID: 23537d91f1f5385ea3cfe294a038185c19a5ea08ac5df8e29a1a1958067b8598
+UD14_FINAL_IMAGE_TAG=15
 - nuovo tag ACR: 15
 - cleanup eseguito: NO
